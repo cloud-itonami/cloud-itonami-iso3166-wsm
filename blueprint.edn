@@ -6,4 +6,7 @@
  :itonami.blueprint/governor :market-entry-compliance-governor
  :itonami.blueprint/robotics false
  :itonami.blueprint/required-technologies [:identity :forms :dmn :bpmn :audit-ledger]
- :itonami.blueprint/status :public-oss}
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/maturity :implemented
+ :itonami.blueprint/implemented-slice
+ "Full Actors-pattern implementation: MarketEntry-LLM advisor (marketentry.marketentryllm) sealed behind an independent Market-Entry Compliance Governor (marketentry.governor) driving a langgraph-clj StateGraph (marketentry.operation) over an append-only audit ledger; MemStore + langchain-store-backed DatomicStore (marketentry.store, per ADR-2607141600); marketentry.facts grounded in a verified Samoa dossier (Government Tenders Board / Public Finance Management Act 2001 s.88 / Ministry of Finance Treasury Instructions Part K + B4 Schedule multi-tier procurement-authority ladder / MCIL Companies Registry + Foreign Investment Act 2000 as amended / Ministry of Customs and Revenue Business Licence+TIN+VAGST); governor contract + store parity + registry + phase + facts tests all passing (clojure -M:dev:test, 38 tests / 136 assertions); CI (.github/workflows/ci.yml) reconstructs the kotoba-lang/langgraph+langchain+langchain-store sibling-checkout layout."}
