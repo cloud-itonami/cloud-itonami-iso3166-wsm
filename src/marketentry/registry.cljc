@@ -49,7 +49,7 @@
   would keep, not the act of submitting a filing itself (that is
   `marketentry.operation`'s `:filing/submit`, always human-gated -- see
   README Actuation)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn- unsigned-certificate
   "Every certificate this actor produces is UNSIGNED -- signature is
@@ -212,7 +212,7 @@
     (throw (ex-info "draft: jurisdiction required" {})))
   (when (< sequence 0)
     (throw (ex-info "draft: sequence must be >= 0" {})))
-  (let [draft-number (str (str/upper-case jurisdiction) "-DFT-" (zero-pad sequence 6))
+  (let [draft-number (str (str/upper jurisdiction) "-DFT-" (zero-pad sequence 6))
         record {"record_id" draft-number
                 "kind" "filing-draft"
                 "engagement_id" engagement-id
@@ -232,7 +232,7 @@
     (throw (ex-info "submit: jurisdiction required" {})))
   (when (< sequence 0)
     (throw (ex-info "submit: sequence must be >= 0" {})))
-  (let [submit-number (str (str/upper-case jurisdiction) "-SUB-" (zero-pad sequence 6))
+  (let [submit-number (str (str/upper jurisdiction) "-SUB-" (zero-pad sequence 6))
         record {"record_id" submit-number
                 "kind" "filing-submit"
                 "engagement_id" engagement-id
