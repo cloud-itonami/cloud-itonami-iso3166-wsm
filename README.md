@@ -39,7 +39,7 @@ as every other `cloud-itonami-iso3166-*` sibling:
   verify (e.g. a local-representative/agent provision in the Companies
   Act 2001's own text -- `parliament.gov.ws` was DNS-unreachable this
   session).
-- `src/statute/facts.cljc` -- general-law catalog: the Companies Act
+- `src/statute/facts.cljk` -- general-law catalog: the Companies Act
   2001 (company law) and the Labour and Employment Relations Act 2013
   (labour law, confirmed via PacLII's own Consolidated Acts of Samoa
   2014 database).
@@ -63,7 +63,7 @@ Alongside the market-entry / statute catalogs, this repo carries a
 `com-junkawasaki/root`) — national dishes, protected products, beverages,
 crafts, festivals and heritage sites for Samoa:
 
-- `src/culture/facts.cljc` — the catalog, source of truth (keyed by
+- `src/culture/facts.cljk` — the catalog, source of truth (keyed by
   uppercase ISO3, mirroring `statute.facts`).
 - `schema/culture.edn` — DataScript schema.
 - `data/culture-tx.edn` — derived DataScript tx-data (regenerated from
